@@ -146,11 +146,11 @@ If two components release simultaneously:
   - ~~Publish to GHCR as OCI artifact~~ ✅
   - ~~Test manual release process~~ ✅
 
-- [ ] **M3: Update Component Repos**
-  - Update dot-ai release workflow to bump umbrella
-  - Update dot-ai-controller release workflow
-  - Update dot-ai-ui release workflow
-  - Test end-to-end: component release triggers umbrella update
+- [x] **M3: Update Component Repos**
+  - ~~Update dot-ai release workflow to bump umbrella~~ ✅
+  - ~~Update dot-ai-controller release workflow~~ ✅
+  - ~~Update dot-ai-ui release workflow~~ ✅
+  - ~~Test end-to-end: component release triggers umbrella update~~ ✅
 
 - [ ] **M4: Documentation**
   - [x] Document installation in umbrella repo README ✅
@@ -225,7 +225,7 @@ If two components release simultaneously:
 
 **Last Updated**: 2026-01-04
 
-**Status**: In Progress (M1 Complete, M2 Complete, M4 Partial)
+**Status**: In Progress (M1 Complete, M2 Complete, M3 Complete, M4 Partial)
 
 ### Completed
 - M1: Chart structure with Chart.yaml, values.yaml, .helmignore
@@ -236,9 +236,10 @@ If two components release simultaneously:
 - M2: Release workflow (.github/workflows/release.yaml) to package and publish to GHCR
 - Release workflow triggers dot-ai-website rebuild when docs change
 - Added Renovate configuration for automated GHA updates
+- M3: All three component repos (dot-ai, dot-ai-controller, dot-ai-ui) now auto-update umbrella chart on release
 
 ### Next Steps
-1. Implement M3: Update component repos to bump umbrella on release
+1. Complete M4: Add umbrella chart references to component repo documentation
 
 ---
 
