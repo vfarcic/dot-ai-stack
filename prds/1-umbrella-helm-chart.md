@@ -1,7 +1,7 @@
 # PRD #1: Umbrella Helm Chart for dot-ai Stack
 
 **GitHub Issue**: [#1](https://github.com/vfarcic/dot-ai-stack/issues/1)
-**Status**: Not Started
+**Status**: In Progress
 **Priority**: Medium
 **Created**: 2025-12-30
 
@@ -135,12 +135,11 @@ If two components release simultaneously:
 
 ## Milestones
 
-- [ ] **M1: Create Repository and Chart Structure**
+- [x] **M1: Create Repository and Chart Structure**
   - ~~Create `dot-ai-stack` repository~~ ✅
   - ~~Move this PRD to new repo~~ ✅
-  - Create Chart.yaml with dependencies
-  - Create minimal values.yaml
-  - Create README.md with usage instructions
+  - ~~Create Chart.yaml with dependencies~~ ✅
+  - ~~Create minimal values.yaml~~ ✅
 
 - [ ] **M2: Release Workflow**
   - Create GHA workflow to package chart
@@ -178,9 +177,9 @@ If two components release simultaneously:
 ## Dependencies
 
 ### Internal Dependencies
-- dot-ai Helm chart (exists)
-- dot-ai-controller Helm chart (exists)
-- dot-ai-ui Helm chart (needs creation - new project)
+- dot-ai Helm chart (exists) ✅
+- dot-ai-controller Helm chart (exists) ✅
+- dot-ai-ui Helm chart (exists) ✅
 
 ### External Dependencies
 - GitHub Actions for CI/CD
@@ -204,7 +203,7 @@ If two components release simultaneously:
 | Race conditions on concurrent releases | Low - manual resolution | Accept manual merge; consider PR-based updates later |
 | Breaking changes between components | Medium | Require coordinated releases for majors |
 | Umbrella version confusion | Low | Clear versioning docs; changelog noting component versions |
-| dot-ai-ui chart doesn't exist yet | Blocks full implementation | Start with dot-ai + dot-ai-controller; add UI when available |
+| ~~dot-ai-ui chart doesn't exist yet~~ | ~~Blocks full implementation~~ | ✅ Resolved - dot-ai-ui chart now exists |
 
 ---
 
@@ -215,18 +214,24 @@ If two components release simultaneously:
 | 2025-12-30 | **Accept manual race condition resolution** | Concurrent releases are rare; complexity of automation not worth it |
 | 2025-12-30 | **Separate semantic versioning for umbrella** | Umbrella version represents the combination, independent of components |
 | 2025-12-30 | **Coordinated releases for breaking changes** | Release dependencies first, then dependents |
+| 2026-01-04 | **Include ResourceSyncConfig and CapabilityScanConfig by default** | Enables resource discovery and capability scanning out-of-the-box; configurable via `enabled` flags |
+| 2026-01-04 | **Use fullnameOverride for consistent service names** | Ensures dot-ai-ui can connect to dot-ai service regardless of release name |
 
 ---
 
 ## Current Status
 
-**Last Updated**: 2025-12-30
+**Last Updated**: 2026-01-04
 
-**Status**: Not Started
+**Status**: In Progress (M1 Complete)
+
+### Completed
+- M1: Chart structure with Chart.yaml, values.yaml, .helmignore
+- Added ResourceSyncConfig and CapabilityScanConfig templates
+- Integration defaults for service discovery between components
 
 ### Next Steps
-1. Resolve open questions
-2. Implement M1
+1. Implement M2: Release Workflow
 
 ---
 
