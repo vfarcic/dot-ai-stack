@@ -156,6 +156,8 @@ If two components release simultaneously:
 - [ ] **M4: Documentation**
   - Document installation in umbrella repo README
   - Add reference in dot-ai docs
+  - Add reference in dot-ai-controller docs
+  - Add reference in dot-ai-ui docs
   - Document values override pattern
 
 ---
