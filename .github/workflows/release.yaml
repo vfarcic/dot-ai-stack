@@ -1,0 +1,62 @@
+name: Release Helm Chart
+
+on:
+  push:
+    branches:
+      - main
+      - feature/prd-1-umbrella-helm-chart
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.14.0
+
+      - name: Login to GHCR
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Update dependencies
+        run: helm dependency update
+
+      - name: Package chart
+        run: helm package .
+
+      - name: Push to GHCR
+        run: |
+          helm push dot-ai-stack-*.tgz oci://ghcr.io/vfarcic/dot-ai-stack/charts
+
+      - name: Check if docs changed
+        id: docs-check
+        run: |
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            DOCS_CHANGED=$(git diff --name-only HEAD~1 HEAD -- README.md docs/ | wc -l)
+          else
+            DOCS_CHANGED=1  # First commit, trigger rebuild
+          fi
+          if [ "$DOCS_CHANGED" -gt 0 ]; then
+            echo "docs-changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "docs-changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Trigger Website Rebuild
+        if: steps.docs-check.outputs.docs-changed == 'true'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.WEBSITE_DISPATCH_TOKEN }}
+          repository: vfarcic/dot-ai-website
+          event-type: upstream-release
+          client-payload: '{"source": "dot-ai-stack"}'
