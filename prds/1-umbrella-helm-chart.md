@@ -1,6 +1,6 @@
-# PRD #315: Umbrella Helm Chart for dot-ai Stack
+# PRD #1: Umbrella Helm Chart for dot-ai Stack
 
-**GitHub Issue**: [#315](https://github.com/vfarcic/dot-ai/issues/315)
+**GitHub Issue**: [#1](https://github.com/vfarcic/dot-ai-stack/issues/1)
 **Status**: Not Started
 **Priority**: Medium
 **Created**: 2025-12-30
@@ -136,8 +136,8 @@ If two components release simultaneously:
 ## Milestones
 
 - [ ] **M1: Create Repository and Chart Structure**
-  - Create `dot-ai-stack` repository
-  - Move this PRD to new repo
+  - ~~Create `dot-ai-stack` repository~~ ✅
+  - ~~Move this PRD to new repo~~ ✅
   - Create Chart.yaml with dependencies
   - Create minimal values.yaml
   - Create README.md with usage instructions
@@ -224,9 +224,7 @@ If two components release simultaneously:
 
 ### Next Steps
 1. Resolve open questions
-2. Create repository
-3. Move PRD to new repo
-4. Implement M1
+2. Implement M1
 
 ---
 
