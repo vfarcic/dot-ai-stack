@@ -4,10 +4,9 @@ description: Complete dot-ai stack - MCP server, controller, and UI
 type: application
 version: 0.1.0
 appVersion: "0.1.0"
-
 dependencies:
   - name: dot-ai
-    version: "0.180.0"
+    version: "0.181.0"
     repository: "oci://ghcr.io/vfarcic/dot-ai/charts"
   - name: dot-ai-controller
     version: "0.39.0"
