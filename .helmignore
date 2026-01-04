@@ -1,0 +1,30 @@
+# Patterns to ignore when building packages.
+.DS_Store
+.git/
+.gitignore
+.bzr/
+.bzrignore
+.hg/
+.hgignore
+.svn/
+*.swp
+*.bak
+*.tmp
+*.orig
+*~
+.project
+.idea/
+*.tmproj
+.vscode/
+
+# Devbox
+.devbox/
+devbox.json
+devbox.lock
+
+# PRDs
+prds/
+
+# Environment files
+.env*
+kubeconfig.yaml

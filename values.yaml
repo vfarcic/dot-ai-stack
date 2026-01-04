@@ -1,0 +1,51 @@
+# dot-ai-stack umbrella chart values
+# Override sub-chart values by nesting under the chart name
+
+# dot-ai MCP server configuration
+# Docs: https://devopstoolkit.ai/docs/mcp/setup/kubernetes-setup
+dot-ai:
+  # Fixed service name so dot-ai-ui can find it at http://dot-ai:3456
+  fullnameOverride: dot-ai
+  # Example overrides:
+  # secrets:
+  #   anthropic:
+  #     apiKey: "your-api-key"
+  #   openai:
+  #     apiKey: "your-api-key"
+  #   auth:
+  #     token: "your-auth-token"
+  # ingress:
+  #   enabled: true
+  #   className: nginx
+
+# dot-ai-controller configuration
+# Docs: https://devopstoolkit.ai/docs/controller/setup-guide
+dot-ai-controller:
+  fullnameOverride: dot-ai-controller
+  # Example overrides:
+  # resources:
+  #   limits:
+  #     cpu: 1000m
+  #     memory: 1Gi
+
+# dot-ai-ui web interface configuration
+# Docs: https://devopstoolkit.ai/docs/ui/setup/kubernetes-setup
+dot-ai-ui:
+  fullnameOverride: dot-ai-ui
+  # Example overrides:
+  # dotAi:
+  #   auth:
+  #     token: "your-auth-token"  # Must match dot-ai secrets.auth.token
+  # ingress:
+  #   enabled: true
+  #   host: dot-ai-ui.example.com
+
+# ResourceSyncConfig - enables resource discovery and semantic search
+# Docs: https://devopstoolkit.ai/docs/controller/resource-sync-guide
+resourceSync:
+  enabled: true
+
+# CapabilityScanConfig - enables cluster capability discovery
+# Docs: https://devopstoolkit.ai/docs/controller/capability-scan-guide
+capabilityScan:
+  enabled: true

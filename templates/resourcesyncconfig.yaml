@@ -1,0 +1,11 @@
+{{- if .Values.resourceSync.enabled }}
+apiVersion: dot-ai.devopstoolkit.live/v1alpha1
+kind: ResourceSyncConfig
+metadata:
+  name: default-sync
+spec:
+  mcpEndpoint: http://dot-ai:3456/api/v1/resources/sync
+  mcpAuthSecretRef:
+    name: dot-ai-secrets
+    key: auth-token
+{{- end }}
