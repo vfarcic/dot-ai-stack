@@ -3,6 +3,9 @@ apiVersion: dot-ai.devopstoolkit.live/v1alpha1
 kind: CapabilityScanConfig
 metadata:
   name: default-scan
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "10"
 spec:
   mcp:
     endpoint: http://dot-ai:3456/api/v1/tools/manageOrgData

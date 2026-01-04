@@ -3,6 +3,9 @@ apiVersion: dot-ai.devopstoolkit.live/v1alpha1
 kind: ResourceSyncConfig
 metadata:
   name: default-sync
+  annotations:
+    "helm.sh/hook": post-install,post-upgrade
+    "helm.sh/hook-weight": "10"
 spec:
   mcpEndpoint: http://dot-ai:3456/api/v1/resources/sync
   mcpAuthSecretRef:
