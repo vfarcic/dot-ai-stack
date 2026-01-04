@@ -153,11 +153,11 @@ If two components release simultaneously:
   - Test end-to-end: component release triggers umbrella update
 
 - [ ] **M4: Documentation**
-  - Document installation in umbrella repo README
-  - Add reference in dot-ai docs
-  - Add reference in dot-ai-controller docs
-  - Add reference in dot-ai-ui docs
-  - Document values override pattern
+  - [x] Document installation in umbrella repo README ✅
+  - [ ] Add reference in dot-ai docs
+  - [ ] Add reference in dot-ai-controller docs
+  - [ ] Add reference in dot-ai-ui docs
+  - [x] Document values override pattern ✅
 
 ---
 
@@ -216,6 +216,7 @@ If two components release simultaneously:
 | 2025-12-30 | **Coordinated releases for breaking changes** | Release dependencies first, then dependents |
 | 2026-01-04 | **Include ResourceSyncConfig and CapabilityScanConfig by default** | Enables resource discovery and capability scanning out-of-the-box; configurable via `enabled` flags |
 | 2026-01-04 | **Use fullnameOverride for consistent service names** | Ensures dot-ai-ui can connect to dot-ai service regardless of release name |
+| 2026-01-04 | **Use Helm post-install hooks for CRs** | ResourceSyncConfig and CapabilityScanConfig use post-install/post-upgrade hooks to ensure CRDs from controller are installed first |
 
 ---
 
@@ -223,15 +224,17 @@ If two components release simultaneously:
 
 **Last Updated**: 2026-01-04
 
-**Status**: In Progress (M1 Complete)
+**Status**: In Progress (M1 Complete, M4 Partial)
 
 ### Completed
 - M1: Chart structure with Chart.yaml, values.yaml, .helmignore
-- Added ResourceSyncConfig and CapabilityScanConfig templates
+- Added ResourceSyncConfig and CapabilityScanConfig templates with Helm hooks
 - Integration defaults for service discovery between components
+- M4 (partial): README.md and docs/index.md with installation guide and values override documentation
+- Tested full installation flow on Kind cluster
 
 ### Next Steps
-1. Implement M2: Release Workflow
+1. Implement M2: Release Workflow (GHA to publish to GHCR)
 
 ---
 
