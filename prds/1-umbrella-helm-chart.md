@@ -1,7 +1,7 @@
 # PRD #1: Umbrella Helm Chart for dot-ai Stack
 
 **GitHub Issue**: [#1](https://github.com/vfarcic/dot-ai-stack/issues/1)
-**Status**: In Progress
+**Status**: Complete
 **Priority**: Medium
 **Created**: 2025-12-30
 
@@ -152,12 +152,12 @@ If two components release simultaneously:
   - ~~Update dot-ai-ui release workflow~~ ✅
   - ~~Test end-to-end: component release triggers umbrella update~~ ✅
 
-- [ ] **M4: Documentation**
-  - [x] Document installation in umbrella repo README ✅
-  - [ ] Add reference in dot-ai docs
-  - [ ] Add reference in dot-ai-controller docs
-  - [ ] Add reference in dot-ai-ui docs
-  - [x] Document values override pattern ✅
+- [x] **M4: Documentation**
+  - ~~Document installation in umbrella repo README~~ ✅
+  - ~~Add reference in dot-ai docs~~ ✅
+  - ~~Add reference in dot-ai-controller docs~~ ✅
+  - ~~Add reference in dot-ai-ui docs~~ ✅
+  - ~~Document values override pattern~~ ✅
 
 ---
 
@@ -225,21 +225,20 @@ If two components release simultaneously:
 
 **Last Updated**: 2026-01-04
 
-**Status**: In Progress (M1 Complete, M2 Complete, M3 Complete, M4 Partial)
+**Status**: Complete (All Milestones Done)
 
 ### Completed
 - M1: Chart structure with Chart.yaml, values.yaml, .helmignore
 - Added ResourceSyncConfig and CapabilityScanConfig templates with Helm hooks
 - Integration defaults for service discovery between components
-- M4 (partial): README.md and docs/index.md with installation guide and values override documentation
-- Tested full installation flow on Kind cluster
 - M2: Release workflow (.github/workflows/release.yaml) to package and publish to GHCR
 - Release workflow triggers dot-ai-website rebuild when docs change
 - Added Renovate configuration for automated GHA updates
 - M3: All three component repos (dot-ai, dot-ai-controller, dot-ai-ui) now auto-update umbrella chart on release
+- M4: Complete documentation - umbrella repo README, values override docs, and references added to all component repos (dot-ai, dot-ai-controller, dot-ai-ui)
 
 ### Next Steps
-1. Complete M4: Add umbrella chart references to component repo documentation
+None - PRD complete!
 
 ---
 
