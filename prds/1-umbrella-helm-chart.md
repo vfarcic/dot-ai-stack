@@ -141,10 +141,10 @@ If two components release simultaneously:
   - ~~Create Chart.yaml with dependencies~~ ✅
   - ~~Create minimal values.yaml~~ ✅
 
-- [ ] **M2: Release Workflow**
-  - Create GHA workflow to package chart
-  - Publish to GHCR as OCI artifact
-  - Test manual release process
+- [x] **M2: Release Workflow**
+  - ~~Create GHA workflow to package chart~~ ✅
+  - ~~Publish to GHCR as OCI artifact~~ ✅
+  - ~~Test manual release process~~ ✅
 
 - [ ] **M3: Update Component Repos**
   - Update dot-ai release workflow to bump umbrella
@@ -217,6 +217,7 @@ If two components release simultaneously:
 | 2026-01-04 | **Include ResourceSyncConfig and CapabilityScanConfig by default** | Enables resource discovery and capability scanning out-of-the-box; configurable via `enabled` flags |
 | 2026-01-04 | **Use fullnameOverride for consistent service names** | Ensures dot-ai-ui can connect to dot-ai service regardless of release name |
 | 2026-01-04 | **Use Helm post-install hooks for CRs** | ResourceSyncConfig and CapabilityScanConfig use post-install/post-upgrade hooks to ensure CRDs from controller are installed first |
+| 2026-01-04 | **Trigger website rebuild on doc changes** | Release workflow dispatches to dot-ai-website when README.md or docs/ change, consistent with other component repos |
 
 ---
 
@@ -224,7 +225,7 @@ If two components release simultaneously:
 
 **Last Updated**: 2026-01-04
 
-**Status**: In Progress (M1 Complete, M4 Partial)
+**Status**: In Progress (M1 Complete, M2 Complete, M4 Partial)
 
 ### Completed
 - M1: Chart structure with Chart.yaml, values.yaml, .helmignore
@@ -232,9 +233,12 @@ If two components release simultaneously:
 - Integration defaults for service discovery between components
 - M4 (partial): README.md and docs/index.md with installation guide and values override documentation
 - Tested full installation flow on Kind cluster
+- M2: Release workflow (.github/workflows/release.yaml) to package and publish to GHCR
+- Release workflow triggers dot-ai-website rebuild when docs change
+- Added Renovate configuration for automated GHA updates
 
 ### Next Steps
-1. Implement M2: Release Workflow (GHA to publish to GHCR)
+1. Implement M3: Update component repos to bump umbrella on release
 
 ---
 
