@@ -4,7 +4,7 @@
 
 ## Overview
 
-The dot-ai-stack umbrella chart installs all DevOps AI Toolkit components together:
+The dot-ai-stack umbrella chart installs all DevOps AI Toolkit components together with a single command:
 - **DevOps AI Toolkit** - MCP server for AI-powered Kubernetes operations
 - **DevOps AI Toolkit Controller** - Kubernetes controller for autonomous capability scanning
 - **DevOps AI Toolkit Web UI** - Web interface for visual cluster management
