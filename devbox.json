@@ -3,14 +3,10 @@
   "packages": [
     "kind@0.30.0",
     "git@2.51.0",
-    "teller@2.0.7",
     "kubernetes-helm@3.19.0",
     "nushell@0.106.1",
     "kubectl@1.33.4",
-    "awscli2@2.31.11",
-    "kubectl-tree@0.4.6",
     "vals@0.42.5",
-    "hadolint@2.14.0",
     "gh@2.83.1",
     "jq@1.8.1",
     "yq-go@4.50.1"
