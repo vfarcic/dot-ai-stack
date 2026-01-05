@@ -94,7 +94,6 @@ helm upgrade --install dot-ai-stack \
     --set dot-ai.ingress.enabled=true \
     --set dot-ai.ingress.className=nginx \
     --set dot-ai.ingress.host=dot-ai.127.0.0.1.nip.io \
-    --set dot-ai-ui.dotAi.auth.token=$DOT_AI_AUTH_TOKEN \
     --set dot-ai-ui.ingress.enabled=true \
     --set dot-ai-ui.ingress.host=dot-ai-ui.127.0.0.1.nip.io \
     --wait
