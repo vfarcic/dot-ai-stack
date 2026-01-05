@@ -2,8 +2,8 @@ apiVersion: v2
 name: dot-ai-stack
 description: Complete dot-ai stack - MCP server, controller, and UI
 type: application
-version: 0.5.0
-appVersion: "0.5.0"
+version: 0.6.0
+appVersion: "0.6.0"
 dependencies:
   - name: dot-ai
     version: "0.183.0"
