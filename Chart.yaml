@@ -12,5 +12,5 @@ dependencies:
     version: "0.40.0"
     repository: "oci://ghcr.io/vfarcic/dot-ai-controller/charts"
   - name: dot-ai-ui
-    version: "0.7.0"
+    version: "0.8.0"
     repository: "oci://ghcr.io/vfarcic/dot-ai-ui/charts"
