@@ -17,6 +17,8 @@ dot-ai:
   # ingress:
   #   enabled: true
   #   className: nginx
+  # webUI:
+  #   baseUrl: "http://dot-ai-ui.example.com"  # Should match dot-ai-ui.ingress.host
 
 # dot-ai-controller configuration
 # Docs: https://devopstoolkit.ai/docs/controller/setup-guide
@@ -38,7 +40,7 @@ dot-ai-ui:
   #     token: "your-auth-token"  # Must match dot-ai secrets.auth.token
   # ingress:
   #   enabled: true
-  #   host: dot-ai-ui.example.com
+  #   host: dot-ai-ui.example.com  # Set dot-ai.webUI.baseUrl to enable MCP links to UI
 
 # ResourceSyncConfig - enables resource discovery and semantic search
 # Docs: https://devopstoolkit.ai/docs/controller/resource-sync-guide
