@@ -74,10 +74,12 @@ export OPENAI_API_KEY="your-openai-api-key"
 
 > **Note:** Multiple AI providers are supported. See [AI Model Configuration](https://devopstoolkit.ai/docs/mcp/setup/mcp-setup/#ai-model-configuration) for all options including Google Gemini, AWS Bedrock, Azure OpenAI, and others.
 
-Generate a random authentication token for the MCP server:
+Generate random authentication tokens for the MCP server and Web UI:
 
 ```bash
 export DOT_AI_AUTH_TOKEN=$(openssl rand -base64 32)
+
+export DOT_AI_UI_AUTH_TOKEN=$(openssl rand -base64 32)
 ```
 
 ## Step 3: Install the Stack
@@ -95,6 +97,7 @@ helm upgrade --install dot-ai-stack \
     --set dot-ai.ingress.className=nginx \
     --set dot-ai.ingress.host=dot-ai.127.0.0.1.nip.io \
     --set dot-ai.webUI.baseUrl=http://dot-ai-ui.127.0.0.1.nip.io \
+    --set dot-ai-ui.uiAuth.token=$DOT_AI_UI_AUTH_TOKEN \
     --set dot-ai-ui.ingress.enabled=true \
     --set dot-ai-ui.ingress.host=dot-ai-ui.127.0.0.1.nip.io \
     --wait

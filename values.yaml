@@ -38,6 +38,11 @@ dot-ai-ui:
   # dotAi:
   #   auth:
   #     token: "your-auth-token"  # Must match dot-ai secrets.auth.token
+  # uiAuth:
+  #   token: "your-ui-auth-token"  # Token to access the Web UI dashboard
+  #   secretRef:
+  #     name: ""                   # Or reference existing secret (recommended for production)
+  #     key: "ui-auth-token"
   # ingress:
   #   enabled: true
   #   host: dot-ai-ui.example.com  # Set dot-ai.webUI.baseUrl to enable MCP links to UI
