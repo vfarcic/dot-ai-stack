@@ -51,8 +51,11 @@ dot-ai-ui:
 # Docs: https://devopstoolkit.ai/docs/controller/resource-sync-guide
 resourceSync:
   enabled: true
+  # debounceWindowSeconds: 30    # Seconds to wait before syncing after a change (default: 10, max: 300)
+  # resyncIntervalMinutes: 120   # Minutes between full resyncs (default: 60, max: 1440)
 
 # CapabilityScanConfig - enables cluster capability discovery
 # Docs: https://devopstoolkit.ai/docs/controller/capability-scan-guide
 capabilityScan:
   enabled: true
+  # debounceWindowSeconds: 30    # Seconds to wait before scanning after a change (default: 10, max: 300)
