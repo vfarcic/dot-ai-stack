@@ -197,7 +197,7 @@ Override any component value by prefixing with the chart name:
 ```
 
 For available options, see each component's documentation:
-- [DevOps AI Toolkit values](https://devopstoolkit.ai/docs/mcp/setup/kubernetes-setup/)
+- [DevOps AI Toolkit values](https://devopstoolkit.ai/docs/mcp/setup/mcp-setup/)
 - [Controller values](https://devopstoolkit.ai/docs/controller/)
 - [Web UI values](https://devopstoolkit.ai/docs/ui/)
 
