@@ -11,4 +11,10 @@ spec:
   mcpAuthSecretRef:
     name: dot-ai-secrets
     key: auth-token
+  {{- with .Values.resourceSync.debounceWindowSeconds }}
+  debounceWindowSeconds: {{ . }}
+  {{- end }}
+  {{- with .Values.resourceSync.resyncIntervalMinutes }}
+  resyncIntervalMinutes: {{ . }}
+  {{- end }}
 {{- end }}

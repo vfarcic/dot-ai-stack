@@ -12,4 +12,7 @@ spec:
     authSecretRef:
       name: dot-ai-secrets
       key: auth-token
+  {{- with .Values.capabilityScan.debounceWindowSeconds }}
+  debounceWindowSeconds: {{ . }}
+  {{- end }}
 {{- end }}
