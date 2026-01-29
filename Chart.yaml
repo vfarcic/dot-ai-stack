@@ -6,7 +6,7 @@ version: 0.37.0
 appVersion: "0.37.0"
 dependencies:
   - name: dot-ai
-    version: "1.0.1"
+    version: "1.0.3"
     repository: "oci://ghcr.io/vfarcic/dot-ai/charts"
   - name: dot-ai-controller
     version: "0.44.1"
