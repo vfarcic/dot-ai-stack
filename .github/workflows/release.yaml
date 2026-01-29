@@ -18,6 +18,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: true
 
       - name: Set up Helm
         uses: azure/setup-helm@v4
