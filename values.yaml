@@ -1,7 +1,7 @@
 # dot-ai-stack umbrella chart values
 # Override sub-chart values by nesting under the chart name
 
-# dot-ai MCP server configuration
+# dot-ai MCP server configuration (core component - always deployed)
 # Docs: https://devopstoolkit.ai/docs/mcp/setup/kubernetes-setup
 dot-ai:
   # Fixed service name so dot-ai-ui can find it at http://dot-ai:3456
@@ -23,6 +23,8 @@ dot-ai:
 # dot-ai-controller configuration
 # Docs: https://devopstoolkit.ai/docs/controller/setup-guide
 dot-ai-controller:
+  # Set to false to disable the controller (e.g., for MCP-only usage)
+  enabled: true
   fullnameOverride: dot-ai-controller
   # Example overrides:
   # resources:
@@ -33,6 +35,8 @@ dot-ai-controller:
 # dot-ai-ui web interface configuration
 # Docs: https://devopstoolkit.ai/docs/ui/setup/kubernetes-setup
 dot-ai-ui:
+  # Set to false to disable the web UI
+  enabled: true
   fullnameOverride: dot-ai-ui
   # Example overrides:
   # dotAi:
