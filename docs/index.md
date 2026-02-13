@@ -144,7 +144,13 @@ Expected output:
 {"status":"ok"}
 ```
 
-## Step 5: Configure MCP Client
+## Step 5: Choose Your Client
+
+The DevOps AI Toolkit can be accessed through two client options - **MCP** or **CLI**. Both provide AI agent integration with full feature parity.
+
+### Option A: MCP Client
+
+**Best for:** Curated high-level operations designed to minimize context window usage.
 
 Create the MCP client configuration file:
 
@@ -166,15 +172,62 @@ EOF
 
 > **Note:** This example creates `.mcp.json` in the current directory for Claude Code. Other MCP-enabled agents may expect the configuration in a different location (e.g., `~/.config/` or within the agent's settings). Consult your agent's documentation for the correct path.
 
+**Learn more:** [MCP Setup Documentation](https://devopstoolkit.ai/docs/mcp/setup/mcp-setup/)
+
+### Option B: CLI Client
+
+**Best for:** Comprehensive API access with lower token overhead for AI agents, plus scripting and automation support.
+
+Install the CLI:
+
+**macOS (Homebrew):**
+```bash
+brew install vfarcic/tap/dot-ai
+```
+
+**Windows (Scoop):**
+```powershell
+scoop bucket add dot-ai https://github.com/vfarcic/scoop-dot-ai
+scoop install dot-ai
+```
+
+**Other platforms:** Download from [releases](https://github.com/vfarcic/dot-ai-cli/releases) or see [installation guide](https://devopstoolkit.ai/docs/cli/setup/installation/).
+
+Configure the CLI:
+
+```bash
+export DOT_AI_URL="http://dot-ai.127.0.0.1.nip.io"
+```
+
+Generate skills for your AI agent:
+
+```bash
+# For Claude Code
+dot-ai skills generate --agent claude-code
+
+# For Cursor
+dot-ai skills generate --agent cursor
+
+# For Windsurf
+dot-ai skills generate --agent windsurf
+```
+
+**Learn more:** [CLI Quick Start](https://devopstoolkit.ai/docs/cli/quick-start/) | [Installation](https://devopstoolkit.ai/docs/cli/setup/installation/) | [Agent Integration](https://devopstoolkit.ai/docs/cli/setup/agent-integration/)
+
+### Choosing Between MCP and CLI
+
+- **Use MCP** for simpler, high-level operations with minimal tool descriptions
+- **Use CLI** for comprehensive API access with lower token costs and better economy for agents executing multiple commands
+
 ## Step 6: Start Using
 
-Launch your MCP-enabled AI tool:
+Launch your AI agent:
 
 ```bash
 claude
 ```
 
-> **Note:** The `claude` command is for Claude Code. If you're using a different MCP-enabled agent (e.g., Cursor, VS Code with MCP extension), launch it according to its documentation.
+> **Note:** If your agent doesn't automatically detect the client, explicitly invoke it with "Use dot-ai MCP" or "Use dot-ai CLI" depending on which client you configured.
 
 Try these example prompts:
 
