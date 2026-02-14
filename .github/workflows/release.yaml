@@ -73,10 +73,11 @@ jobs:
       - name: Check if docs changed
         id: docs-check
         run: |
-          if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            DOCS_CHANGED=$(git diff --name-only HEAD~1 HEAD -- README.md docs/ | wc -l)
+          if git rev-parse HEAD~2 >/dev/null 2>&1; then
+            # Check the commit before the version bump (HEAD~1) against HEAD~2
+            DOCS_CHANGED=$(git diff --name-only HEAD~2 HEAD~1 -- README.md docs/ | wc -l)
           else
-            DOCS_CHANGED=1  # First commit, trigger rebuild
+            DOCS_CHANGED=1  # First commit or second commit, trigger rebuild
           fi
           if [ "$DOCS_CHANGED" -gt 0 ]; then
             echo "docs-changed=true" >> $GITHUB_OUTPUT
