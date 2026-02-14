@@ -212,7 +212,7 @@ dot-ai skills generate --agent cursor
 dot-ai skills generate --agent windsurf
 ```
 
-**Learn more:** [CLI Quick Start](https://devopstoolkit.ai/docs/cli/quick-start/) | [Installation](https://devopstoolkit.ai/docs/cli/setup/installation/) | [Agent Integration](https://devopstoolkit.ai/docs/cli/setup/agent-integration/)
+**Learn more:** [CLI Quick Start](https://devopstoolkit.ai/docs/cli/quick-start/) | [Installation](https://devopstoolkit.ai/docs/cli/setup/installation/) | [Agent Integration](https://devopstoolkit.ai/docs/cli/guides/skills-generation/)
 
 ### Choosing Between MCP and CLI
 
