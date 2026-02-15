@@ -72,7 +72,7 @@ export ANTHROPIC_API_KEY="your-anthropic-api-key"
 export OPENAI_API_KEY="your-openai-api-key"
 ```
 
-> **Note:** Multiple AI providers are supported. See [AI Model Configuration](https://devopstoolkit.ai/docs/mcp/setup/mcp-setup/#ai-model-configuration) for all options including Google Gemini, AWS Bedrock, Azure OpenAI, and others.
+> **Note:** Multiple AI providers are supported. See [AI Model Configuration](https://devopstoolkit.ai/docs/ai-engine/setup/deployment#ai-model-configuration) for all options including Google Gemini, AWS Bedrock, Azure OpenAI, and others.
 
 Generate random authentication tokens for the MCP server and Web UI:
 
@@ -172,7 +172,7 @@ EOF
 
 > **Note:** This example creates `.mcp.json` in the current directory for Claude Code. Other MCP-enabled agents may expect the configuration in a different location (e.g., `~/.config/` or within the agent's settings). Consult your agent's documentation for the correct path.
 
-**Learn more:** [MCP Setup Documentation](https://devopstoolkit.ai/docs/mcp/setup/mcp-setup/)
+**Learn more:** [MCP Setup Documentation](https://devopstoolkit.ai/docs/ai-engine/setup/deployment)
 
 ### Option B: CLI Client
 
@@ -250,15 +250,15 @@ Override any component value by prefixing with the chart name:
 ```
 
 For available options, see each component's documentation:
-- [DevOps AI Toolkit values](https://devopstoolkit.ai/docs/mcp/setup/mcp-setup/)
+- [DevOps AI Toolkit values](https://devopstoolkit.ai/docs/ai-engine/setup/deployment)
 - [Controller values](https://devopstoolkit.ai/docs/controller/)
 - [Web UI values](https://devopstoolkit.ai/docs/ui/)
 
 ## Next Steps
 
-- [MCP Tools Overview](https://devopstoolkit.ai/docs/mcp/guides/mcp-tools-overview/) - Complete feature reference
-- [Pattern Management](https://devopstoolkit.ai/docs/mcp/guides/pattern-management-guide/) - Create organizational patterns
-- [Policy Management](https://devopstoolkit.ai/docs/mcp/guides/policy-management-guide/) - Define governance policies
+- [MCP Tools Overview](https://devopstoolkit.ai/docs/ai-engine/tools/overview) - Complete feature reference
+- [Pattern Management](https://devopstoolkit.ai/docs/ai-engine/organizational-data/patterns) - Create organizational patterns
+- [Policy Management](https://devopstoolkit.ai/docs/ai-engine/organizational-data/policies) - Define governance policies
 
 ## Cleanup
 
