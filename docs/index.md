@@ -16,7 +16,7 @@ The dot-ai-stack umbrella chart installs all DevOps AI Toolkit components with a
 - **Kubernetes cluster** with an ingress controller
 - **Helm 3.x** installed
 - **kubectl** configured with cluster access
-- **AI API keys** for AI-powered features (Anthropic and/or OpenAI)
+- **AI API keys** for AI-powered features (see [AI Model Configuration](https://devopstoolkit.ai/docs/ai-engine/setup/deployment#ai-model-configuration) for supported providers)
 
 ## Step 1: Create a Local Cluster (Optional)
 
@@ -93,6 +93,7 @@ helm upgrade --install dot-ai-stack \
     --set dot-ai.secrets.anthropic.apiKey=$ANTHROPIC_API_KEY \
     --set dot-ai.secrets.openai.apiKey=$OPENAI_API_KEY \
     --set dot-ai.secrets.auth.token=$DOT_AI_AUTH_TOKEN \
+    --set dot-ai.localEmbeddings.enabled=true \
     --set dot-ai.ingress.enabled=true \
     --set dot-ai.ingress.className=nginx \
     --set dot-ai.ingress.host=dot-ai.127.0.0.1.nip.io \
@@ -110,6 +111,7 @@ This installs:
 - **dot-ai-controller** - Kubernetes controller for autonomous operations
 - **dot-ai-ui** - Web interface at `dot-ai-ui.127.0.0.1.nip.io`
 - **Qdrant** - Vector database for pattern and policy storage
+- **Local Embeddings** - In-cluster embedding service ([HuggingFace TEI](https://huggingface.co/docs/text-embeddings-inference)) so semantic search works without external embedding API keys
 - **ResourceSyncConfig** - Enables resource discovery
 - **CapabilityScanConfig** - Enables cluster capability scanning
 

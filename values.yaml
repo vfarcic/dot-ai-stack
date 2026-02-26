@@ -6,6 +6,10 @@
 dot-ai:
   # Fixed service name so dot-ai-ui can find it at http://dot-ai:3456
   fullnameOverride: dot-ai
+  # Enable local embeddings to use in-cluster HuggingFace TEI for semantic search
+  # without requiring external embedding API keys (recommended for new installations)
+  # localEmbeddings:
+  #   enabled: true
   # Example overrides:
   # secrets:
   #   anthropic:
