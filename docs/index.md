@@ -68,8 +68,6 @@ Set your API keys for AI-powered features:
 
 ```bash
 export ANTHROPIC_API_KEY="your-anthropic-api-key"
-
-export OPENAI_API_KEY="your-openai-api-key"
 ```
 
 > **Note:** Multiple AI providers are supported. See [AI Model Configuration](https://devopstoolkit.ai/docs/ai-engine/setup/deployment#ai-model-configuration) for all options including Google Gemini, AWS Bedrock, Azure OpenAI, and others.
@@ -91,7 +89,6 @@ helm upgrade --install dot-ai-stack \
     oci://ghcr.io/vfarcic/dot-ai-stack/charts/dot-ai-stack \
     --namespace dot-ai --create-namespace \
     --set dot-ai.secrets.anthropic.apiKey=$ANTHROPIC_API_KEY \
-    --set dot-ai.secrets.openai.apiKey=$OPENAI_API_KEY \
     --set dot-ai.secrets.auth.token=$DOT_AI_AUTH_TOKEN \
     --set dot-ai.localEmbeddings.enabled=true \
     --set dot-ai.ingress.enabled=true \
