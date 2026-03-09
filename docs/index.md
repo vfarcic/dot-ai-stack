@@ -13,14 +13,13 @@ The dot-ai-stack umbrella chart installs all DevOps AI Toolkit components with a
 
 ## Prerequisites
 
-- **Kubernetes cluster** with an ingress controller
 - **Helm 3.x** installed
 - **kubectl** configured with cluster access
 - **AI API keys** for AI-powered features (see [AI Model Configuration](https://devopstoolkit.ai/docs/ai-engine/setup/deployment#ai-model-configuration) for supported providers)
 
 ## Step 1: Create a Local Cluster (Optional)
 
-> Skip this step if you already have a Kubernetes cluster with an ingress controller.
+> Skip this step if you already have a Kubernetes cluster. You will also need a [Gateway API](https://gateway-api.sigs.k8s.io/implementations/) implementation or an ingress controller installed in the cluster.
 
 Create a Kind cluster with ingress port mappings:
 
@@ -47,6 +46,8 @@ Set kubectl context to "kind-dot-ai-stack"
 ```
 
 Install the nginx ingress controller for Kind:
+
+> **Note:** This quickstart uses ingress-nginx for simplicity. The community-maintained ingress-nginx project reached [End of Life in March 2026](https://github.com/kubernetes/ingress-nginx). For production clusters, consider using [Gateway API](https://devopstoolkit.ai/docs/ai-engine/setup/gateway-api) instead — see also the [deployment guide](https://devopstoolkit.ai/docs/ai-engine/setup/deployment) for configuration options.
 
 ```bash
 kubectl apply \
