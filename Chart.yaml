@@ -6,7 +6,7 @@ version: 0.109.0
 appVersion: "0.109.0"
 dependencies:
   - name: dot-ai
-    version: "2.2.2"
+    version: "2.3.0"
     repository: "oci://ghcr.io/vfarcic/dot-ai/charts"
     # No condition - dot-ai MCP server is the core component and always required
   - name: dot-ai-controller
