@@ -9,7 +9,7 @@
     "gh@2.83.1",
     "jq@1.8.1",
     "yq-go@4.50.1",
-    "kubernetes-helm@3.19.1"
+    "kubernetes-helm@3.20.2"
   ],
   "shell": {
     "init_hook": [
