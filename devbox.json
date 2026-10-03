@@ -3,7 +3,7 @@
   "packages": [
     "kind@0.30.0",
     "git@2.51.0",
-    "nushell@0.106.1",
+    "nushell@0.115.1",
     "kubectl@1.33.4",
     "vals@0.42.5",
     "gh@2.83.1",
