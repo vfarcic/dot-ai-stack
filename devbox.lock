@@ -469,51 +469,41 @@
         }
       }
     },
-    "vals@0.42.5": {
-      "last_modified": "2025-11-23T21:50:36Z",
-      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#vals",
+    "vals@0.47.0": {
+      "last_modified": "2026-10-24T11:44:37Z",
+      "resolved": "github:NixOS/nixpkgs/d3b13ad75cc492690728f9307e443dec9ef9a20e#vals",
       "source": "devbox-search",
-      "version": "0.42.5",
+      "version": "0.47.0",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/sdd83kbyqp9n3ifbimgbr7b05b8wgs31-vals-0.42.5",
+              "path": "/nix/store/wdq3wz9il2pp8xigf56qwq7m1dzl360a-vals-0.47.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/sdd83kbyqp9n3ifbimgbr7b05b8wgs31-vals-0.42.5"
+          "store_path": "/nix/store/wdq3wz9il2pp8xigf56qwq7m1dzl360a-vals-0.47.0"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/6f5x6xagifd4d80ahj015fg37lap1p5l-vals-0.42.5",
+              "path": "/nix/store/wfxr8x97fj97f5r5qbd5h2avhnkrpwsk-vals-0.47.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/6f5x6xagifd4d80ahj015fg37lap1p5l-vals-0.42.5"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/zvmgfffsfil4shdk0868hahj0wk91k9l-vals-0.42.5",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/zvmgfffsfil4shdk0868hahj0wk91k9l-vals-0.42.5"
+          "store_path": "/nix/store/wfxr8x97fj97f5r5qbd5h2avhnkrpwsk-vals-0.47.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/00ny4pvkj8crkblqbqa8hcffcnwxp182-vals-0.42.5",
+              "path": "/nix/store/i3hjv53a9k00w3yv3v8fhmsi0g70fp2h-vals-0.47.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/00ny4pvkj8crkblqbqa8hcffcnwxp182-vals-0.42.5"
+          "store_path": "/nix/store/i3hjv53a9k00w3yv3v8fhmsi0g70fp2h-vals-0.47.0"
         }
       }
     },
