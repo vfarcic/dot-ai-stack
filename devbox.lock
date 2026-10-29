@@ -1,51 +1,49 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "gh@2.83.1": {
-      "last_modified": "2025-11-23T21:50:36Z",
-      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#gh",
+    "gh@2.103.3": {
+      "last_modified": "2026-10-28T22:04:29Z",
+      "resolved": "github:NixOS/nixpkgs/e62746b0b472753ef019baceab6f1e2e52014980#gh",
       "source": "devbox-search",
-      "version": "2.83.1",
+      "version": "2.103.3",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/jcfc6p66x7qnrwf2dn83gaar13swpfka-gh-2.83.1",
+              "path": "/nix/store/7qi3caa290zmhzrs8z4zzvfmi5ncm87x-gh-2.103.3",
               "default": true
             }
           ],
-          "store_path": "/nix/store/jcfc6p66x7qnrwf2dn83gaar13swpfka-gh-2.83.1"
+          "store_path": "/nix/store/7qi3caa290zmhzrs8z4zzvfmi5ncm87x-gh-2.103.3"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/vr17vpprzabs961dj075z5wl6nw6b4w4-gh-2.83.1",
+              "path": "/nix/store/h8xsnwlzdjgv4jdn00i9dsvbbi3v4x4m-gh-2.103.3",
               "default": true
-            }
-          ],
-          "store_path": "/nix/store/vr17vpprzabs961dj075z5wl6nw6b4w4-gh-2.83.1"
-        },
-        "x86_64-darwin": {
-          "outputs": [
+            },
             {
-              "name": "out",
-              "path": "/nix/store/v1xrng4rrjshc9ini30l07rsc2dbi7fh-gh-2.83.1",
-              "default": true
+              "name": "debug",
+              "path": "/nix/store/1rxn5m8b9ynd222f0zsqhvzmcilv3lhf-gh-2.103.3-debug"
             }
           ],
-          "store_path": "/nix/store/v1xrng4rrjshc9ini30l07rsc2dbi7fh-gh-2.83.1"
+          "store_path": "/nix/store/h8xsnwlzdjgv4jdn00i9dsvbbi3v4x4m-gh-2.103.3"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/y12yx7z4g4a3jbzh28h6yrpvcf6px5kl-gh-2.83.1",
+              "path": "/nix/store/ri8q81g024g6zkmljbnr6wylw8zs5c92-gh-2.103.3",
               "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/ix6vh2kp8r6nqi3bgfzbrnj38dc0n6xk-gh-2.103.3-debug"
             }
           ],
-          "store_path": "/nix/store/y12yx7z4g4a3jbzh28h6yrpvcf6px5kl-gh-2.83.1"
+          "store_path": "/nix/store/ri8q81g024g6zkmljbnr6wylw8zs5c92-gh-2.103.3"
         }
       }
     },
