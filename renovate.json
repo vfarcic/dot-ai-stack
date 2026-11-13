@@ -3,7 +3,8 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
-      "matchManagers": ["github-actions"],
+      "description": "Automerge non-major updates once the CI workflow passes; major updates stay manual",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
   ]

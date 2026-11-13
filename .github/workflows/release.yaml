@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - main
+    # Tooling-only changes don't affect the chart, so they don't publish a release
+    paths-ignore:
+      - devbox.json
+      - devbox.lock
+      - renovate.json
+      - .github/**
+
+# Run releases one at a time so back-to-back merges don't race on the version-bump push
+concurrency:
+  group: release
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -16,6 +27,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          # Check out the tip of main, not the triggering commit, so a queued run
+          # includes the version bump pushed by the run before it
+          ref: main
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: true
