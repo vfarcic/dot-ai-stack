@@ -16,7 +16,7 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v4
         with:
-          version: v3.22.1
+          version: v4.3.2
 
       - name: Update dependencies
         run: helm dependency update
