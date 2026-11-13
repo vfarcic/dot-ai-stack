@@ -1,4 +1,7 @@
 {{- if .Values.resourceSync.enabled }}
+{{- /* Service name of the dot-ai subchart, computed with the subchart's own fullname helper */}}
+{{- $dotAiName := include "dot-ai.fullname" (dict "Values" (index .Values "dot-ai") "Chart" (dict "Name" "dot-ai") "Release" .Release) }}
+{{- $clusterDomain := .Values.resourceSync.clusterDomain | default "cluster.local" }}
 apiVersion: dot-ai.devopstoolkit.live/v1alpha1
 kind: ResourceSyncConfig
 metadata:
@@ -6,8 +9,9 @@ metadata:
   annotations:
     "helm.sh/hook": post-install,post-upgrade
     "helm.sh/hook-weight": "10"
+    "helm.sh/hook-delete-policy": before-hook-creation
 spec:
-  mcpEndpoint: http://dot-ai:3456/api/v1/resources/sync
+  mcpEndpoint: {{ .Values.resourceSync.mcpEndpoint | default (printf "http://%s.%s.svc.%s:3456/api/v1/resources/sync" $dotAiName .Release.Namespace $clusterDomain) }}
   mcpAuthSecretRef:
     name: dot-ai-secrets
     key: auth-token
@@ -16,5 +20,20 @@ spec:
   {{- end }}
   {{- with .Values.resourceSync.resyncIntervalMinutes }}
   resyncIntervalMinutes: {{ . }}
+  {{- end }}
+  {{- with .Values.resourceSync.excludeResources }}
+  excludeResources:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.resourceSync.includeResources }}
+  includeResources:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.resourceSync.watchNamespaceLabelSelector }}
+  watchNamespaceLabelSelector: {{ . | quote }}
+  {{- end }}
+  {{- with .Values.resourceSync.watchNamespaces }}
+  watchNamespaces:
+    {{- toYaml . | nindent 4 }}
   {{- end }}
 {{- end }}

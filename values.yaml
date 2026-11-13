@@ -61,6 +61,13 @@ resourceSync:
   enabled: true
   # debounceWindowSeconds: 30    # Seconds to wait before syncing after a change (default: 10, max: 300)
   # resyncIntervalMinutes: 120   # Minutes between full resyncs (default: 60, max: 1440)
+  # mcpEndpoint: http://dot-ai.my-namespace.svc.cluster.local:3456/api/v1/resources/sync  # Default: in-cluster FQDN of the dot-ai service
+  # clusterDomain: cluster.local  # Cluster DNS domain used to build the default mcpEndpoint
+  # Resource filtering (requires dot-ai-controller with ResourceSyncConfig filtering support)
+  # includeResources: []          # resource.group patterns to watch (default: all), e.g. "deployments.apps", "*.crossplane.io"
+  # excludeResources: []          # resource.group patterns to skip, applied after includeResources, e.g. "events.", "*.metrics.k8s.io"
+  # watchNamespaces: []           # Restrict instance watching to these namespaces (default: all)
+  # watchNamespaceLabelSelector: ""  # Restrict to namespaces matching this selector; takes precedence over watchNamespaces
 
 # CapabilityScanConfig - enables cluster capability discovery
 # Docs: https://devopstoolkit.ai/docs/controller/capability-scan-guide
