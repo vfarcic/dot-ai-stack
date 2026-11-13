@@ -68,7 +68,17 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Chart.yaml
           git commit -m "chore: bump chart version to ${{ steps.bump.outputs.version }} [skip ci]"
-          git push
+          # A tooling-only commit can reach main after checkout. It doesn't trigger
+          # its own release, so rebase onto it and retry instead of failing.
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt), rebasing onto origin/main"
+            git pull --rebase origin main
+          done
+          echo "Failed to push version bump after 3 attempts"
+          exit 1
 
       - name: Login to GHCR
         run: |
@@ -87,11 +97,13 @@ jobs:
       - name: Check if docs changed
         id: docs-check
         run: |
-          if git rev-parse HEAD~2 >/dev/null 2>&1; then
-            # Check the commit before the version bump (HEAD~1) against HEAD~2
-            DOCS_CHANGED=$(git diff --name-only HEAD~2 HEAD~1 -- README.md docs/ | wc -l)
+          # Compare everything since the previous release's version bump, not just one
+          # commit: a run can include several commits, some of them tooling-only.
+          PREV_RELEASE=$(git log -1 --format=%H --grep='^chore: bump chart version' HEAD~1 || true)
+          if [ -n "$PREV_RELEASE" ]; then
+            DOCS_CHANGED=$(git diff --name-only "$PREV_RELEASE" HEAD~1 -- README.md docs/ | wc -l)
           else
-            DOCS_CHANGED=1  # First commit or second commit, trigger rebuild
+            DOCS_CHANGED=1  # No previous release found, trigger rebuild
           fi
           if [ "$DOCS_CHANGED" -gt 0 ]; then
             echo "docs-changed=true" >> $GITHUB_OUTPUT
