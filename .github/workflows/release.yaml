@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Check out the tip of main, not the triggering commit, so a queued run
           # includes the version bump pushed by the run before it
