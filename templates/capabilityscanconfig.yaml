@@ -8,7 +8,7 @@ metadata:
     "helm.sh/hook-weight": "10"
 spec:
   mcp:
-    endpoint: http://dot-ai:3456/api/v1/tools/manageOrgData
+    endpoint: http://{{ include "dot-ai-stack.dotAiHost" . }}:3456/api/v1/tools/manageOrgData
     authSecretRef:
       name: dot-ai-secrets
       key: auth-token
